@@ -1,0 +1,20 @@
+{
+  "name": "bus_server",
+  "version": "1.0.0",
+  "description": "bus server for openkore via javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "sctnightcore & alisonrag",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.4.1",
+    "express": "^4.17.1"
+  },
+  "bin": "index.js",
+  "pkg": {
+    "targets": ["node12"]
+  }
+}
