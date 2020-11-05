@@ -1,5 +1,5 @@
 {
     "DISCORD_TOKEN": "",
     "DISCORD_CHANNEL_ID": "",
-    "WEB_PORT": 3000
+    "SOKCET_PORT": 1234
 }
