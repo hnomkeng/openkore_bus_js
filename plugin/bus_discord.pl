@@ -9,6 +9,7 @@ use Plugins;
 use Commands;
 use Data::Dumper;
 use Log qw( message error );
+use Misc;
 use Globals;
 use Utils;
 use AI;
@@ -23,13 +24,6 @@ my $networkHook = Plugins::addHooks(
 );
 
 my $bus_message_received;
-
-# handle plugin loaded manually
-if ($::net) {
-	if ($::net->getState() > 1) {
-		$bus_message_received = $bus->onMessageReceived->add(undef, \&bus_message_received);
-	}
-}
 
 sub init {
 	return if ($::net->getState() == 1);
@@ -46,7 +40,7 @@ sub bus_message_received {
 		error Dumper($msg->{args});
 		my $user = $msg->{args}->{to};
 		my $message = $msg->{args}->{message};
-		Commands::run("pm $user $message");
+		#sendMessage($messageSender, "pm", $message, $user);
 	}
 }
 
